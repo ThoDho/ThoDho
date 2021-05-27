@@ -1,0 +1,12 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 140 140">
+    <g id="eye">
+        <g id="eyeballGroup" opacity="1">
+            <g id="pupilIrisGroup">
+                <circle id="iris" fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" cx="73" cy="70" r="17" />
+                <circle id="pupil" fill="#000000" cx="73" cy="70" r="8.1" />
+            </g>
+        </g>
+        <path id="botLid1" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" d="M 10,70 c 36,38.3, 88.3,37.3, 120,0" />
+        <path id="topLid" fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" d="M10,70.3c36,-38.3,88.3-37.3,120,0" />
+    </g>
+</svg>

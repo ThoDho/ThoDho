@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: auto;
+    font-size: 16px;
+    color: black;
+    background-color: rgb(65,70,244);
+    border-left: 10px solid rgb(65,70,244);
+    border-right: 10px solid rgb(65,70,244);
+    transition: border-width 0.4s cubic-bezier(0.18, 0.98, 0.45, 1);
+}
+
+body::before,
+body::after{
+    content: '';
+    position: fixed;
+    background: rgb(65,70,244);
+    left: 0;
+    right: 0;
+    height: 10px;
+    transition: height 0.4s cubic-bezier(0.18, 0.98, 0.45, 1);
+}
+
+body::before{
+    z-index: 100;
+    top: 0;
+}
+
+body::after{
+    bottom: 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+section#content{
+    margin: 4em 0 4em 0;
+}
+
+h1{
+    position: relative;
+    color: black;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.01em;
+    font-size: 10vw;
+    line-height: 1.25;
+    width: 90%;
+    margin: auto;
+    transition: font-size 0.4s cubic-bezier(0.18, 0.98, 0.45, 1);
+}
+
+h1 a{
+    color: inherit;
+    text-decoration: none;
+    border-bottom-style: dotted;
+    border-bottom-width: .08em;
+    border-bottom-color: inherit;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+h1 a.with-period::after{
+    content: ".";
+}
+
+h1 a::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url(eye.svg);
+}
+
+h1 .nobreak{
+    white-space: nowrap;
+}
+
+.extra-container{
+    display: block;
+    font-family: 'PT Serif', 'Garamond', serif;
+    font-size: 0.5em;
+    line-height: 1.4;
+    color: rgb(63,63,63);
+    padding: 1.5rem 0;
+
+    transition: font-size 0.4s cubic-bezier(0.18, 0.98, 0.45, 1);
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: openSesame;
+}
+
+.extra-container.close{
+    animation-name: closeSesame;
+}
+
+
+/* Landscape phones and down */
+@media only screen and (min-width: 480px) {
+    h1{
+        font-size: 2.8rem;
+    }
+
+    h1 a{
+        margin-right: 20px;
+    }
+
+    h1 a::after{
+        width: 30px;
+        height: 30px;
+    }
+
+
+}
+
+/* Landscape phone to portrait tablet */
+@media only screen and (min-width: 768px) {
+
+    body{
+        font-size: 20px;
+        border-width: 20px;
+    }
+
+    body::before,
+    body::after{
+        height: 20px;
+    }
+
+    h1{
+        font-size: 3.5em;
+    }
+
+    h1 a{
+        /*margin-right: 10px;*/
+    }
+
+    h1 .nobreak{
+        white-space: nowrap;
+    }
+
+    .extra-container{
+        font-size: 0.42em;
+    }
+}
+/* Portrait tablet to landscape and desktop */
+@media only screen and (min-width: 991px) {
+
+}
+/* Large desktop */
+@media only screen and (min-width: 1200px) {
+
+    h1{
+        font-size: 4em;
+    }
+
+}
+
+
+@keyframes openSesame {
+    0%{
+        height: 0px;
+        opacity: 0;
+    }
+    100%{
+        height: 100%;
+        opacity: 100%;
+    }
+}
+
+@keyframes closeSesame {
+    0%{
+        display: none;
+        height: 100%;
+        opacity: 100%;
+    }
+    100%{
+        height: 0px;
+        opacity: 0;
+    }
+}
